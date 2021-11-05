@@ -1,0 +1,255 @@
+header{
+  background-attachment: fixed;   
+  background-position: center;  
+  background-repeat: no-repeat;
+  background-size: cover;       
+  background-image: url("../images/header.jpeg");
+}
+header h1{
+  font-family: 'Shippori Mincho B1';
+  font-weight: 700;
+  color: #5d3754;
+  text-align: center;
+
+}
+h1{
+  font-family: 'Shippori Mincho B1';
+  font-weight: 800;
+  font-size:35px;
+  color: #000000;
+  text-align: left;
+}
+h2{
+  font-family: 'Shippori Mincho B1';
+  font-weight: 700;
+  color: #4B2F47;
+  text-align: center;
+}
+nav ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #5d3754;
+  font-family: 'Shippori Mincho B1';
+}
+nav a{
+  text-decoration: none;
+  color: #ffffff;
+}
+nav a:hover{
+  text-decoration: underline;
+}
+.current_item a{
+  text-decoration: underline;
+  font-weight: bold;
+}
+body{
+  background-color :#ECF0F0;
+}
+#main{
+  background-color: #ECF0F0;
+  font-size: 24px;
+  margin: 10px;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+/* Skip to Content */
+.skip a{
+  background: white;
+  left: 0;
+  padding: 7px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+  position: absolute;
+  top: -50px;
+}
+.skip a:focus{
+  position: absolute;
+  top: 10px;
+}
+
+.title{
+  animation-name: title_grow;
+  animation-duration: 10s;
+}
+.head{
+  animation-name: head_grow;
+  animation-duration: 10s;
+}
+
+.grid{
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto auto auto;
+  display: grid;
+}
+
+.gallery{
+  display: grid;
+	grid-template-columns: auto auto auto ;
+  grid-template-rows: auto auto auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  height: 100%;
+  width: 100%;
+  border:10px #0D1B2A
+}
+
+.gallery img{
+  width: 100%;
+  height:90%;
+  border:10px #0D1B2A
+}
+#gallery{
+  text-align: center;
+}
+.photos h1{
+  font-size: 20px;
+}
+.photos img{
+  
+  height: 100%;
+  width: 100%;
+  border: 3px solid #000000;
+}
+.subpage{
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: 400px 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.subpage img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #000000;
+}
+footer {
+  background-color: #4B2F47;
+  color: #ECF0F0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 800px) {
+  header{
+      height: 100px;
+      display:flex;
+      align-items: center;
+      justify-content:center;
+  }
+  header h1{
+    font-size: 20px;
+    padding-top: 5px;
+    align-items: center;
+}
+header p{
+    font-size: 0px;
+}
+nav ul{
+  padding: 10px;
+}
+
+
+.about-image{
+  max-width: 1000px;
+  max-height: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  justify-content: center;
+}
+.about-text{
+  grid-column: 1;
+  grid-row: 1;
+  border: 2px solid #0D1B2A;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Shippori Mincho B1';
+  color: #415a77;
+}
+.gallery{
+  display: grid;
+	grid-template-columns: auto ;
+  grid-template-rows: auto ;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  height: 100%;
+  border:2px #0D1B2A
+}
+
+footer {
+  background-color: #4B2F47;
+  color: #ECF0F0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.email, .comments, .submit{
+  font-family: 'Shippori Mincho B1';
+}
+.submit{
+  background-color: #ffffff;
+  border: 1px #ECF0F0 solid;
+  color: #415A77;
+}
+.LH-image img{
+  grid-row:1;
+  grid-column:2;
+}
+.subpage {
+  display: block;
+  font-size: 80%;
+  justify-content: center;
+}
+.subpage_image{
+  max-width: 500px;
+  max-height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  justify-content: center;
+  text-align:center;
+}
+.subpage p {
+  position: relative;
+  text-align: center;
+  font-size:12pt;
+}
+.subpage h1{
+  font-family: 'Shippori Mincho B1';
+  font-weight: 800;
+  font-size:35px;
+  color: #000000;
+  text-align: center;
+}
+@-webkit-keyframes title_grow{
+  from{
+      font-size: 0px;
+      opacity: 0;
+  }
+  to{
+      font-size: 20px;
+      opacity: 1;
+  }
+}
+@keyframes title_grow{
+  from{
+      font-size: 0px;
+      opacity: 0;
+  }
+  to{
+      font-size: 20px;
+      opacity: 1;
+  }
+}
+
+}
