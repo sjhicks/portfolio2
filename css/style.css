@@ -1,9 +1,11 @@
-header{
+
+  header{
     background-attachment: fixed;   
     background-position: center;  
     background-repeat: no-repeat;
     background-size: cover;       
-    background-image: url("../images/header.jpeg");
+    background-color: white;
+    
   }
   header h1{
     font-family: 'Shippori Mincho B1';
@@ -38,10 +40,9 @@ header{
 header p{
     font-size: 0px;
 }
+
 nav ul{
   padding: 10px;
-}
-nav ul{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -51,6 +52,7 @@ nav ul{
 nav a{
   text-decoration: none;
   color: #ffffff;
+  margin:20px;
 }
 nav a:hover{
   text-decoration: underline;
@@ -84,10 +86,9 @@ body{
   position: absolute;
   top: 10px;
 }
-
 .about-image{
-  max-width: 1000px;
-  max-height: 300px;
+  width: 200px;
+  height: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -103,6 +104,7 @@ body{
   font-family: 'Shippori Mincho B1';
   color: #415a77;
 }
+
 .gallery{
   display: grid;
 	grid-template-columns: auto ;
@@ -168,28 +170,60 @@ footer {
   color: #000000;
   text-align: center;
 }
-@-webkit-keyframes title_grow{
-  from{
-      font-size: 0px;
-      opacity: 0;
-  }
-  to{
-      font-size: 20px;
-      opacity: 1;
-  }
-}
-@keyframes title_grow{
-  from{
-      font-size: 0px;
-      opacity: 0;
-  }
-  to{
-      font-size: 20px;
-      opacity: 1;
-  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media only screen and (min-width: 800px) {
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  justify-content: center;
+}
+.flip-card-inner{
+  position: relative;
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner, 
+.flip-card:focus-within .flip-card-inner,
+.flip-card:active .flip-card-inner,
+.flip-card:focus .flip-card-inner{
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back{
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-back{
+  transform: rotateY(180deg);
+  background-color: #ffffff;
+  font-family: 'Shippori Mincho B1';
+  width: 200px;
+  height: 300px;
+  color: #0D1B2A;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+  border: solid 3px #4B2F47;
+	border-radius: 15px;
+	
+}
+
+
+/*tablet*/
+@media only screen and (min-width: 800px){ 
 
 header h1{
   font-size:26px;
@@ -200,6 +234,9 @@ h1{
 
 nav ul{
   font-size: 22px;
+}
+nav a{
+  margin:10px;
 }
 
 #main{
@@ -221,8 +258,8 @@ nav ul{
   display: grid;
 }
 .about-image{
-  max-width: 2000px;
-  max-height: 600px;
+  width: 400px;
+  height: 600px;
 }
 .gallery{
   display: grid;
@@ -251,6 +288,26 @@ nav ul{
   font-size:16pt;
 }
 
+.flip-card {
+  width: 400px;
+  height: 600px; 
+  display:block;
+  align-items:center;
+}
+.flip-card-inner{
+	width: 100%;
+  height: 100%;
+}
+
+.flip-card-front, .flip-card-back{
+	width: 100%; 
+  height: 100%; 
+}
+.flip-card-back{
+  font-size: 40px;
+  border: solid 5px #4B2F47;
+  border-radius: 15px;
+}
 @-webkit-keyframes title_grow{
   from{
       font-size: 0px;
@@ -271,5 +328,61 @@ nav ul{
       opacity: 1;
   }
 }
-
+/*tablet*/
+@media only screen and (min-width: 1200px){
+  header h1{
+    font-size:40px;
+  }
+  h1{
+    font-size:120px;
+  }
+  nav ul{
+    font-size: 26px;
+  }
+  nav a{
+    margin:15px;
+  }
+  #main{
+    font-size: 35px;
+  }
+  .photos h1{
+    font-size: 24px;
+  }
+  .subpage p {
+    font-size:20pt;
+  }
+  
+  @-webkit-keyframes title_grow{
+    from{
+        font-size: 0px;
+        opacity: 0;
+    }
+    to{
+        font-size: 40px;
+        opacity: 1;
+    }
+  }
+  @keyframes title_grow{
+    from{
+        font-size: 0px;
+        opacity: 0;
+    }
+    to{
+        font-size: 40px;
+        opacity: 1;
+    }
+  }
+}
+}
+@media (prefers-reduced-motion: reduce){
+  .title, .head{
+      animation: none;
+  }
+  .flip-card-inner, .flip-card:hover .flip-card-inner{
+      transition: transform none;
+      transform: none;
+  }
+  header{
+      background-attachment: initial;
+  }
 }
